@@ -259,6 +259,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left:auto;
 }
 
 #content nav .profile img{
@@ -266,6 +267,8 @@ body{
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
+    display:flex;
+    margin-left:auto;
 }
 /*NAVBAR*/
 
