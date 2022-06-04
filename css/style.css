@@ -29,6 +29,7 @@ li{
     --light-yellow : #FFF2C6;
     --orange : #FD7238;
     --light-orange : #FFE0D3;
+    --green-dark : rgb(47,118,146)
 }
 
 body{
@@ -242,6 +243,7 @@ body{
 #content nav .notification{
     font-size: 20px;
     position: relative;
+    margin-left: auto;
 }
 
 #content nav .notification .num{
@@ -259,7 +261,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left:auto;
 }
 
 #content nav .profile img{
@@ -267,8 +268,8 @@ body{
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
-    display : flex;
-    margin-left:auto;
+    display: flex;    
+    margin-left: auto;
 }
 /*NAVBAR*/
 
