@@ -13,7 +13,14 @@ a {
 li{
     list-style: none;
 }
+th{
+    font-weight: normal;
+    font-size:12px;
+}
 
+.text{
+    font-size:14px;
+}
 :root{
     --poppins: 'Poppins' sans-serif;
     --lato: 'Lato' sans-serif;
@@ -42,7 +49,7 @@ body{
     position : fixed;
     top : 0;
     left : 0;
-    width: 280px;
+    width: 150px;
     height: 100%;
     background: var(--light);
     z-index: 1000;
@@ -152,8 +159,7 @@ body{
 /*CONTENT*/
 #content {
     position: relative;
-    width: calc(100% - 280px);
-    left: 280px;
+    width: 100%;
     transition: .3s ease;
 }
 
@@ -182,7 +188,7 @@ body{
     bottom: -40px;
     left:0;
     border-radius: 50px;
-    box-shadow: -20px -20px 0 var(--light);
+    /*box-shadow: -20px -20px 0 var(--light);*/
 }
 
 #content nav a{
@@ -274,3 +280,27 @@ body{
 /*NAVBAR*/
 
 /*CONTENT*/
+#breadc{
+    margin-top:30px;
+    margin-left:180px;
+}
+
+#data-table{
+    margin:0;
+    padding: 0;
+    font-size:12px;
+}
+
+#table-db{
+    width: 200%;
+    height: auto;
+    margin:auto;
+}
+
+#table-db th{
+    padding:0;    
+}
+
+#table-db td{
+    padding: 0;
+}
