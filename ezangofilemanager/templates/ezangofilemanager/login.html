@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ezangofilemanager/semantic.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ezangofilemanager/ezango_login.css' %}">
+    <title>e-Zango | Conexion</title>
+</head>
+<body class="">
+    <!--Login form and text-->
+    <section class="ezform">
+        <div class="ui grid container">
+           <div class="ui eight wide column">
+                <div class="left floated column">
+                    <h2 style="color:#03697E">e-Zango</h2>
+                    <p>Outil d'édition des fiches de demandes de préfinancements BEAC et de suivi des reporting en temps réel.</p>
+                </div>
+           </div>
+           <div class="ui six wide column">
+                <form id="form-box" class="ui form" method="POST" action="#">
+                {% csrf_token %}
+                <div class="ui labeled fluid input field">
+                    <div class="ui label" style="background-color:#03697E">
+                        <i class="ui standard user icon" style="color :#FFFFFF"></i>
+                    </div>
+                    <input type="text" name="email_user" placeholder="Identifiant" required>
+                </div>
+                <div class="ui labeled fluid action input field">
+                    <div class="ui label" style="background-color:#03697E">
+                        <i class="ui standard lock icon" style="color :#FFFFFF"></i>
+                    </div>
+                    <input id="passwd" type="password" name="password" placeholder="Code de sécurité" required>
+                    <a class="ui mini white button">
+                        <i class="ui circular basic eye icon" onclick="passwd()"></i>
+                    </a>
+                    <script>
+                        function passwd() {
+                            var x = document.getElementById("passwd");
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                        }
+                    </script>
+                </div>
+                <button class="ui fluid button" type="submit" id="submit">Authentification</button>
+                <label style="color: #000; font-size: 12px;">This app and all its artifacts are the proprety of <span style="color: #03697E;">Union Gabonaise de Banque</span></label>
+                </form>
+           </div>
+        </div>        
+    </section>
+    <script src="{% static 'ezangofilemanager/semantic.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</body>
+</html>

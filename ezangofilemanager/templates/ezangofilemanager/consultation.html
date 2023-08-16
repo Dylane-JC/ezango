@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Zango | Consultation de demandes</title>
+    <link rel="stylesheet" href="{% static 'ezangofilemanager/ezango_login.css' %}">
+    <link rel="stylesheet" href="{% static 'ezangofilemanager/semantic.min.css' %}">
+    <link rel="stylesheet" href="cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <header>
+        <div class="ui small menu">
+            <a class="item" style="background:#03697E; color:#FFF">
+                <i class="big bars icon" onclick="$('.ui.labeled.icon.sidebar').sidebar('toggle');"></i>
+                e-Zango
+            </a>
+            <div class="right menu">
+                <a class="item"><i class="ui standard user icon"></i> Denzel</a>
+            </div>
+        </div>
+    </header>
+    <!--Menu lateral gauche-->
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+        <a class="item">
+            <i class="edit outline icon"></i>
+            Edition
+        </a>
+        <a class="item">
+            <i class="binoculars icon"></i>
+            Consultation
+        </a>
+        <a class="item">
+            <i class="chart bar outline icon"></i>
+            Dashboard
+        </a>
+        <a class="item">
+            <i class="power off icon"></i>
+            Se déconnecter
+        </a>
+    </div>
+    <!--Fin du menu lateral gauche-->
+    <div class="ui container">
+        <div class="ezangoconsult">
+            <div class="ui small breadcrumb">
+                <a href="/" class="section" style="color:#03697E"><i class="home icon"></i>Accueil</a>
+                <i class="right chevron icon divider"></i>
+                <div class="active section">Consultation</div>
+            </div>
+            <h2 style="font-weight: lighter;">Consultation des demandes</h2>
+        </div><br><br>        
+    </div>
+    <div class="ui" style="margin-left:20px;margin-right:20px;">
+        <div class="ui left corner labeled input">
+            <input class="table-filter" type="text" placeholder="Recherche..." data-table="order-table">
+            <div class="ui left corner label">
+                <i class="asterisk icon"></i>
+            </div>
+        </div>        
+        <table class="ui stackable selectable celled table order-table table" style="font-size:11px;">
+            <thead class="ui inverted table" style="background:#03697E; color:#FFF">
+                <tr>
+                    <th style="height:5px; font-size:14px">Référence <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Type <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Client <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Bénéficiaire <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Montant devise <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Devise <i style="cursor:pointer" class="sort alphabet down icon"></i></th>                    
+                    <th style="height:5px; font-size:14px">CV. XAF <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Date val. <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">User <i style="cursor:pointer" class="sort alphabet down icon"></i></th>
+                    <th style="height:5px; font-size:14px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8512-0001-GA</td>
+                    <td>CREDOC</td>
+                    <td>TRACTAFRIC EQUIPEMENT GABON</td>
+                    <td>TRACTAFRIC EQUIPMENT FRANCE</td>
+                    <td>230 994</td>
+                    <td>EUR</td>                    
+                    <td>151 522 131</td>
+                    <td>04-07-2023</td>
+                    <td>Denzel</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0002-GA</td>
+                    <td>REMDOC</td>
+                    <td>TOYOTA GABON</td>
+                    <td>TOYOTA TSUSHO CORPORATION LTD</td>
+                    <td>123 234 238</td>
+                    <td>JPY</td>                    
+                    <td>493 384 234</td>
+                    <td>04-07-2023</td>
+                    <td>Peterson</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Peterson</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Peterson</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Dalanda</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Dalanda</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Dalanda</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Denzel</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Denzel</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Dalanda</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Alcha</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8512-0003-GA</td>
+                    <td>TRF</td>
+                    <td>FONDATION SYLVIA BONGO</td>
+                    <td>LAURANT BERGER </td>
+                    <td>128 993</td>
+                    <td>USD</td>                    
+                    <td>84 283 222</td>
+                    <td>04-07-2023</td>
+                    <td>Alcha</td>
+                    <td>
+                        <div class="ui mini horizontal divided list">
+                            <div class="item">
+                                <i class="blue binoculars icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="green edit outline icon"></i>
+                            </div>
+                            <div class="item">
+                                <i class="red trash alternate outline icon"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="{% static 'ezangofilemanager/semantic.min.js' %}"></script>
+<script>
+    (function () {
+        'use strict';
+
+        var TableFilter = (function () {
+            var Arr = Array.prototype;
+            var input;
+
+            function onInputEvent(e) {
+                input = e.target;
+                var table1 = document.getElementsByClassName(input.getAttribute('data-table'));
+                Arr.forEach.call(table1, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, filter);
+                    });
+                });
+            }
+
+            function filter(row) {
+                var text = row.textContent.toLowerCase();
+                //console.log(text);
+                var val = input.value.toLowerCase();
+                //console.log(val);
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+            }
+
+            return {
+                init: function () {
+                    var inputs = document.getElementsByClassName('table-filter');
+                    Arr.forEach.call(inputs, function (input) {
+                        input.oninput = onInputEvent;
+                    });
+                }
+            };
+
+        })();
+
+        /*console.log(document.readyState);
+          document.addEventListener('readystatechange', function() {
+              if (document.readyState === 'complete') {
+            console.log(document.readyState);
+                  TableFilter.init();
+              }
+          }); */
+
+        TableFilter.init();
+    })();
+</script>
+
+<script>
+    const compare = function (ids, asc) {
+            return function (row1, row2) {
+                const tdValue = function (row, ids) {
+                    return row.children[ids].textContent;
+                }
+                const tri = function (v1, v2) {
+                    if (v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2)) {
+                        return v1 - v2;
+                    }
+                    else {
+                        return v1.toString().localeCompare(v2);
+                    }
+                    return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+                };
+                return tri(tdValue(asc ? row1 : row2, ids), tdValue(asc ? row2 : row1, ids));
+            }
+        }
+
+        const tbody = document.querySelector('tbody');
+        const thx = document.querySelectorAll('th');
+        const trxb = tbody.querySelectorAll('tr');
+        thx.forEach(function (th) {
+            th.addEventListener('click', function () {
+                let classe = Array.from(trxb).sort(compare(Array.from(thx).indexOf(th), this.asc = !this.asc));
+                classe.forEach(function (tr) {
+                    tbody.appendChild(tr)
+                });
+            })
+        });
+</script>
+</body>
+</html>

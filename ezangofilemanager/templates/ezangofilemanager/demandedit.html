@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ezangofilemanager/ezango_login.css' %}">
+    <link rel="stylesheet" href="{% static 'ezangofilemanager/semantic.min.css' %}">        
+    <title>e-Zango | Edition de fiches</title>
+</head>
+<body>
+    <header>
+        <div class="ui small menu">
+            <a class="item" style="background:#03697E; color:#FFF">
+                <i class="big bars icon" onclick="$('.ui.labeled.icon.sidebar').sidebar('toggle');"></i>
+                e-Zango
+            </a>
+            <div class="right menu">
+                <a class="item"><i class="ui standard user icon"></i> Denzel</a>
+            </div>            
+        </div>
+    </header>
+    <!--Menu lateral gauche-->
+        <div class="ui left demo vertical inverted sidebar labeled icon menu">
+            <a class="item">
+                <i class="edit outline icon"></i>
+                 Edition
+            </a>
+            <a class="item">
+                <i class="binoculars icon"></i>
+                Consultation
+            </a>
+            <a class="item">
+                <i class="chart bar outline icon"></i>
+                Dashboard
+            </a>
+            <a class="item">
+                <i class="power off icon" style="font-weight: lighter;"></i>
+                Se déconnecter
+            </a>
+        </div>
+    <!--Fin du menu lateral gauche-->
+    <section class="ui container">
+        <div class="ezangofile">            
+                <div class="ui small breadcrumb">
+                    <a href="/" class="section" style="color:#03697E"><i class="home icon"></i>Accueil</a>
+                    <i class="right chevron icon divider"></i>                    
+                    <div class="active section">Edition</div>
+                </div>
+            <h2 style="font-weight: lighter;">Edition et impression des demandes</h2>
+            <!--Creation d'une demande de transfert-->
+            <div class="ui pointing secondary menu">
+                <a class="item active teal" id="firsttab" data-tab="first">Création de demande</a>
+                <a class="item teal" data-tab="second">Visualisation d'une demande</a>
+                <a class="item teal" data-tab="third">Fiche d'édition MT202</a>
+            </div>
+            <!--Premier onglet-->
+            <div class="ui tab segment active" data-tab="first">
+                <form class="ui form">
+                    <h4 class="ui dividing header">Informations relatives à l'opération</h4>
+                    <div class="field"> 
+                        <div class="three wide column">
+                            <div class="two fields">                                
+                                    <div class="field">
+                                        <label>Référence de l'opération</label>
+                                        <div class="ui right labeled input">
+                                            <label for="amount" class="ui label" style="background-color: #03697E; color: #FFF;">8512</label>
+                                            <select class="ui fluid dropdown" style="color:#03697E">                                                
+                                                <option value="1">0001</option>
+                                                <option value="2">0002</option>
+                                                <option value="3">0003</option>
+                                                <option value="4">0004</option>
+                                                <option value="5">0005</option>
+                                            </select>
+                                            <div class="ui basic label" style="background-color: #03697E; color: #FFF;">GA</div>
+                                        </div>
+                                    </div>                                
+                                <div class="field">
+                                    <label>Type de l'opération</label>
+                                    <select class="ui fluid dropdown" style="color:#03697E">                                        
+                                        <option value="1">Transfert</option>
+                                        <option value="2">Crédit documentaire</option>
+                                        <option value="3">Remise documentaire</option>
+                                        <option value="4">Enveloppe Hebdomadaire</option>
+                                        <option value="5">Secteur extractif</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Compte BEAC à débiter</label>
+                                    <select class="ui fluid dropdown" style="color:#03697E">                                        
+                                        <option value="1">1234567890</option>
+                                        <option value="2">2345678901</option>
+                                        <option value="3">3456789012</option>
+                                    </select>                                    
+                                </div> 
+                                <div class="field">
+                                    <label>Compte correspondant à créditer</label>
+                                    <select class="ui fluid dropdown" style="color:#03697E">                                        
+                                        <option value="1">4567890123</option>
+                                        <option value="2">5678901234</option>
+                                        <option value="3">6789012345</option>
+                                    </select>
+                                </div>                              
+                            </div>
+                        </div>                       
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Nom de l'ordonateur</label>
+                                <select class="ui fluid dropdown" style="color:#03697E">                                    
+                                    <option value="GM">GABON MECA</option>
+                                    <option value="STP">SODIMTP</option>
+                                    <option value="TRF">TRACTAFRIC GABON</option>
+                                    <option value="STR">SETRAG SA</option>
+                                    <option value="SFV">SOFAVIN GABON</option>
+                                </select>
+                            </div>                            
+                            <div class="field">
+                                <label>Nom du bénéficiaire</label>
+                                <select class="ui fluid dropdown" style="color:#03697E">                                    
+                                    <option value="USD">AGRISAR</option>
+                                    <option value="JPY">TRACTAFRIC EQUIPEMENT FRANCE</option>
+                                    <option value="GBP">DANONE NUTRICA</option>
+                                    <option value="MAD">TOYOTA TSUSHO</option>
+                                </select>
+                            </div>
+                        </div>                        
+                        <div class="three fields">
+                            <div class="field">
+                                <label>Objet de l'opération</label>
+                                <input type="text" name="shipping[first-name]" placeholder="Motif de l'opération" style="color:#03697E">
+                            </div>                            
+                            <div class="field">                                
+                                <label>Nature du produit</label>
+                                <input type="text" name="shipping[last-name]" placeholder="Nature du produit" style="color:#03697E">
+                            </div>
+                            <div class="field">
+                                <label>Banque du bénéficiaire</label>
+                                <select class="ui fluid dropdown" style="color:#03697E">
+                                    <option value="SGE">SOCIETE GENERALE</option>
+                                    <option value="LCL">LE CREDIT LYONAIS</option>
+                                    <option value="BDF">BANQUE DE FRANCE</option>
+                                    <option value="HBB">HONG-KONG BUSINESS BANK</option>
+                                </select>
+                            </div>
+                        </div>                        
+                        <div class="four fields">                                                       
+                            <div class="field">
+                                <label>Montant initial</label>
+                                <input type="text" name="shipping[last-name]" placeholder="Montant initial" style="color:#03697E">
+                            </div>                            
+                            <div class="field">
+                                <label>Devise</label>
+                                <select class="ui fluid dropdown" style="color:#03697E">                                                                     
+                                    <option value="EUR">EUR | Euro</option>
+                                    <option value="USD">USD | US Dollar</option>
+                                    <option value="JPY">JPY | Japan Yen</option>
+                                    <option value="GBP">GBP | Great Bretain Pound</option>
+                                    <option value="MAD">MAD | Marocain Dirham</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Cours appliqué</label>
+                                <input type="number" name="shipping[last-name]" placeholder="" value="655,957" style="color:#03697E">
+                            </div>
+                            <div class="field">
+                                <label>Montant d'utilisation</label>
+                                <input type="text" name="shipping[last-name]" value="123 498,34" readonly style="color:#03697E">
+                            </div>
+                        </div>
+                        <div class="three fields">
+                            <div class="field">
+                                <label>BIC correspondant</label>
+                                <input type="text" name="shipping[last-name]" placeholder="" value="BCMAFRPP" style="color:#03697E">
+                            </div>
+                            <div class="field">
+                                <label>Numéro de domiciliation</label>
+                                <input type="text" name="shipping[last-name]" placeholder="782364-M-40002-M-37746-EUR-2023" style="color:#03697E">
+                            </div>
+                            <div class="field">
+                                <label>Adresse mail client</label>
+                                <input type="text" name="shipping[last-name]" placeholder="adresse@mail.com" style="color:#03697E">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two fields">                        
+                        <div class="field"> 
+                            <label>Contre-valeur XAF</label>
+                            <input type="text" name="shipping[address-2]" value="0" readonly style="color:#03697E">                            
+                        </div>                        
+                        <div class="field">
+                            <label>Date de valeur</label>
+                            <input type="date" name="shipping[address-2]" value="28/06/2023" style="color:#03697E">
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <div class="field">                            
+                                <button class="ui green tiny button" style="background:#03697E; color:#FFF">Ajouter une ligne</button>
+                        </div>
+                    </div>
+                    <div class="ui fluid button" style="background:#03697E; color:#FFF" tabindex="0">Valider les informations</div>
+                </form>
+            </div>
+            <!--Deuxieme onglet-->
+            <div class="ui tab segment" data-tab="second">
+                <!--<object data="{% static 'ezangofilemanager/media/ezangofilemanager/word.docx' %}" style="margin:auto; width: 100%; height:700px"></object>-->
+                <object data=""
+                    style="margin:auto; width: 100%; height:700px"></object>
+            </div>
+            <!--Troisieme onglet-->
+            <div class="ui tab segment" data-tab="third">
+                <div class="ui container">
+                    <object data=""
+                        style="margin:auto; width: 100%; height:700px"></object>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>    
+    <script src="{% static 'ezangofilemanager/semantic.min.js' %}"></script>
+    <script>
+    $('.menu .item').tab();
+    </script>
+</body>
+</html>
