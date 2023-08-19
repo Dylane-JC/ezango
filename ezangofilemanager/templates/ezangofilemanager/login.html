@@ -19,13 +19,20 @@
                 </div>
            </div>
            <div class="ui six wide column">
-                <form id="form-box" class="ui form" method="POST" action="#">
+
+               {% if msg is None %}
+                 {{ msg }}
+               {% elif msg is not None %}
+                 <div class="ui tiny teal message">{{ msg }}</div>
+               {% endif %}
+
+                <form id="form-box" class="ui form" method="POST" action="{% url 'ezangofilemanager:connexion' %}">
                 {% csrf_token %}
                 <div class="ui labeled fluid input field">
                     <div class="ui label" style="background-color:#03697E">
                         <i class="ui standard user icon" style="color :#FFFFFF"></i>
                     </div>
-                    <input type="text" name="email_user" placeholder="Identifiant" required>
+                    <input type="text" name="username" placeholder="Identifiant" required>
                 </div>
                 <div class="ui labeled fluid action input field">
                     <div class="ui label" style="background-color:#03697E">

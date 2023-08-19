@@ -9,6 +9,7 @@ class User(models.Model):
     username = models.CharField(max_length=30, blank=False)
     firstname = models.CharField(max_length=255, blank=False)
     lastname = models.CharField(max_length=255, blank=False)
+    password = models.CharField(max_length=255, null=False, default='123456')
     is_connected = models.BooleanField(default=False)
 
 
